@@ -8,12 +8,10 @@
 <body>
 	<h1>Graficas con php</h1>
 	<div id="grafica">
-
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<script type="text/javascript">
 		"use strict";
-		setTimeout(function(){
 var http = new XMLHttpRequest();
 		http.open('get','datos.php',true);
 		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -64,26 +62,11 @@ var http = new XMLHttpRequest();
           }
         }
         };
-
         var chart = new ApexCharts(document.querySelector('#grafica'), options);
         chart.render();
                 }
             };
          http.send();
-         console.log('Ejecutando');
-         window.setInterval(function () {
-        getNewSeries(lastDate, {
-          min: 10,
-          max: 90
-        })
-
-        chart.updateSeries([{
-          data: data
-        }])
-      }, 1000)
-		},2000);
-
-
 	</script>
 </body>
 </html>
